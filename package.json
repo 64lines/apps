@@ -1,0 +1,27 @@
+{
+  "name": "mapa",
+  "version": "1.0.0",
+  "main": "bin/index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js",
+    "install:app": "npm install -g"
+  },
+  "bin": {
+    "mapa": "./src/index.js"
+  },
+  "engines": {
+    "node" : "18.12.1"
+  },
+  "type": "module",
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "configstore": "^6.0.0",
+    "figlet": "^1.6.0",
+    "inquirer": "^9.2.5",
+    "minimist": "^1.2.8",
+    "typescript": "^5.0.4"
+  }
+}
