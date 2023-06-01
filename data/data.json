@@ -1,0 +1,6 @@
+{
+  "apps": [
+    { "name": "build_app", "description": "Builds apps" },
+    { "name": "brain", "description": "Second brain in VIM" }
+  ]
+}

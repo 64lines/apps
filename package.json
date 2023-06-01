@@ -1,5 +1,5 @@
 {
-  "name": "mapa",
+  "name": "apps",
   "version": "1.0.0",
   "main": "bin/index.js",
   "license": "MIT",
@@ -11,7 +11,7 @@
     "mapa": "./src/index.js"
   },
   "engines": {
-    "node" : "18.12.1"
+    "node": "18.12.1"
   },
   "type": "module",
   "dependencies": {
@@ -22,6 +22,7 @@
     "figlet": "^1.6.0",
     "inquirer": "^9.2.5",
     "minimist": "^1.2.8",
-    "typescript": "^5.0.4"
+    "typescript": "^5.0.4",
+    "yargs": "^17.7.2"
   }
 }
