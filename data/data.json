@@ -1,6 +1,1 @@
-{
-  "apps": [
-    { "name": "build_app", "description": "Builds apps" },
-    { "name": "brain", "description": "Second brain in VIM" }
-  ]
-}
+{"data":[{"id":1,"name":"brain","description":"Second brain app using VIM"}]}
