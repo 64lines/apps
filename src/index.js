@@ -1,13 +1,20 @@
 #!/usr/bin/env node
 import chalk from "chalk";
 import yargs from "yargs/yargs";
+import path from "path";
+import { fileURLToPath } from 'url';
 import { hideBin } from "yargs/helpers";
 import { Persistence, Value } from "./models.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const PERSISTENCE_LOCATION = path.join(__dirname, "../data/data.json");
 
 // Define your commands using yargs
 yargs(hideBin(process.argv))
   .command("list", "List all the applications", () => {
-    const persistence = Persistence("./data/data.json");
+    const persistence = Persistence(PERSISTENCE_LOCATION);
     console.log(`${chalk.blue("==>")} ${chalk.bold.white("Apps:")}\n`);
     const appsList = persistence.getAll();
 
@@ -45,7 +52,7 @@ yargs(hideBin(process.argv))
       },
     },
     (argv) => {
-      const persistence = Persistence("./data/data.json");
+      const persistence = Persistence(PERSISTENCE_LOCATION);
       const name = argv.name;
       const description = argv.description;
       persistence.create({ name, description });
@@ -65,7 +72,7 @@ yargs(hideBin(process.argv))
       },
     },
     (argv) => {
-      const persistence = Persistence("./data/data.json");
+      const persistence = Persistence(PERSISTENCE_LOCATION);
       const id = Number(argv.id);
       const application = persistence.get(id);
       persistence.delete(id);
@@ -75,12 +82,12 @@ yargs(hideBin(process.argv))
     }
   )
   .command("clear", "Remove all applications", (argv) => {
-    const persistence = Persistence("./data/data.json");
+    const persistence = Persistence(PERSISTENCE_LOCATION);
     const application = persistence.clear();
     console.log(
-      `${chalk.bold.red(
-        `All the applications were removed from the database!`
-      )}\n`
+      chalk.bold.red(
+        `\nAll the applications were removed from the database!\n`
+      )
     );
   })
   .help()

@@ -32,8 +32,12 @@ export const Persistence = (filename) => ({
       return Persistence(filename).start().load();
     }
   },
-  clear: () => {
+  start: () => {
     Persistence(filename).store([]);
+    return Persistence(filename);
+  },
+  clear: () => {
+    Persistence(filename).start();
     return Persistence(filename);
   },
   create: (data) => {
