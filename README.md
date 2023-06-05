@@ -6,7 +6,7 @@ Terminal application that lists the applications added to the system, you can in
 yarn install:app
 ```
 
-## Documentation
+## Documentation
 
 ```text
 apps <command>
